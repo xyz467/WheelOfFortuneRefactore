@@ -83,7 +83,7 @@ public class WheelOfFortuneUserGame extends WheelOfFortune{
     public boolean playNext(){
         if(!phrases.isEmpty()) {
             wheelOfFortuneUser.reset(); //resets previous guesses for the next phrase
-            System.out.println("Play another game? (y/n): ");
+            System.out.println("Play Wheel of Fortune Game? (y/n): ");
             Scanner scanner = new Scanner(System.in);
             char choice = scanner.nextLine().charAt(0);
             return (choice == 'Y' || choice == 'y');

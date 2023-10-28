@@ -20,11 +20,10 @@ public abstract class Game {
      */
     public AllGamesRecord playAll(){
         AllGamesRecord allGamesRecord = new AllGamesRecord();
-        do{
+        while(playNext()) {
             GameRecord record = play();
             allGamesRecord.add(record);
         }
-        while(playNext());
         return allGamesRecord;
     }
 }

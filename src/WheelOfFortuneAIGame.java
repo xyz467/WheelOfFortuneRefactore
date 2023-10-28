@@ -22,7 +22,7 @@ public class WheelOfFortuneAIGame extends WheelOfFortune {
         players = new ArrayList<>();
         players.add(new BasicPlayer());
         this.numGames = phrases.size();
-        gamesCounter = 0;
+        gamesCounter = 1;
     }
 
     /**
@@ -34,7 +34,7 @@ public class WheelOfFortuneAIGame extends WheelOfFortune {
         players = new ArrayList<>();
         players.add(player);
         this.numGames = phrases.size();
-        gamesCounter = 0;
+        gamesCounter = -1;
     }
 
     /**
@@ -47,7 +47,7 @@ public class WheelOfFortuneAIGame extends WheelOfFortune {
         this.players = players;
         this.numGames = players.size()* phrases.size();
         this.currentPlayer = players.get(0);
-        gamesCounter = 0;
+        gamesCounter = -1;
     }
 
     /**
@@ -114,14 +114,14 @@ public class WheelOfFortuneAIGame extends WheelOfFortune {
     @Override
     public boolean playNext(){
         numGames--;
-        if(numGames >0) {
+        if(numGames >-1) {
             if(phrases.size() == 0){
                 readPhrases(); //need to regenerate phrases for the new player
             }
             gamesCounter++;
             currentPlayer = players.get((gamesCounter/players.size())); // could put logic in above if statement to increment, but this works
             currentPlayer.reset();
-            return (numGames > 0);
+            return (numGames > -1);
         }
         else
             return false;
