@@ -116,7 +116,7 @@ public class AllGamesRecord {
                         .append(": ").append(average(records.get(i).getPlayerID())).append("\n");
             }
             for (int i = 0; i < records.size(); i = i + 3) {
-                output.append("Top two scores: ").append(highGameList(records.get(i).getPlayerID(), 3)).append("\n");
+                output.append("Player game scores: ").append(highGameList(records.get(i).getPlayerID(), 3)).append("\n");
             }
         }
         else{
