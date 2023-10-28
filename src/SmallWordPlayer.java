@@ -10,9 +10,9 @@ public class SmallWordPlayer implements WheelOfFortunePlayer{
     protected StringBuilder previousGuesses;
     protected StringBuilder priorityGuesses;
     private String currentPhrase;
-    String oneLetterWords;
-    String twoLetterWords;
-    int iteration;
+    private String oneLetterWords;
+    private String twoLetterWords;
+    private int iteration;
 
     /**
      * Constructor, initializes StringBuilder previousGuesses and StringBuilder priority guesses and int iteration.

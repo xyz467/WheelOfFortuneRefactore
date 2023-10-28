@@ -7,8 +7,8 @@ import java.util.Objects;
 public class PriorityPlayer implements WheelOfFortunePlayer{
     protected StringBuilder previousGuesses;
     protected StringBuilder priorityGuesses;
-    int iteration;
-    String currentPhrase;
+    private int iteration;
+    private String currentPhrase;
 
     /**
      * Constructor, initializes StringBuilder priorityGuesses and StringBuilder priority guesses and int iteration.

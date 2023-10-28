@@ -7,8 +7,8 @@ public class BasicPlayer implements WheelOfFortunePlayer{
 
     protected StringBuilder previousGuesses;
     protected String basicGuess;
-    int iteration;
-    String currentPhrase;
+    private int iteration;
+    private String currentPhrase;
 
     /**
      * Constructor, initializes StringBuilder basicGuess and StringBuilder priority guesses and int iteration.
