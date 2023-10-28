@@ -108,15 +108,23 @@ public class AllGamesRecord {
      */
     @Override
     public String toString() {
-        System.out.println("Average Score: " + average());
-        if(records.size() > numPhrases) { //This checks to make sure there is more than 1 player
+        StringBuilder output = new StringBuilder();
+        output.append("Average Score: ").append(average()).append("\n");
+        if (records.size() > numPhrases) { // This checks to make sure there is more than 1 player
             for (int i = 0; i < records.size(); i = i + 3) {
-                System.out.println("Average score for " + records.get(i).getPlayerID() + ": " + average(records.get(i).getPlayerID()));
+                output.append("Average score for ").append(records.get(i).getPlayerID())
+                        .append(": ").append(average(records.get(i).getPlayerID())).append("\n");
+            }
+            for (int i = 0; i < records.size(); i = i + 3) {
+                output.append("Top two scores: ").append(highGameList(records.get(i).getPlayerID(), 3)).append("\n");
             }
         }
-        System.out.println("Top two scores: " + highGameList(2));
-        return records.toString();
+        else{
+            output.append("Top two scores: ").append(highGameList(2)).append("\n");
+        }
+        return output.toString();
     }
+
 
     /**
      * equals method to compare to allGamesRecord lists, which compares the score and playerId of
